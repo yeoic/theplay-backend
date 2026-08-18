@@ -3,3 +3,7 @@ spring:
   config:
     activate:
       on-profile: beta
+
+  jpa:
+    hibernate:
+      ddl-auto: none

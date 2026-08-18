@@ -10,3 +10,7 @@ spring:
       - classpath:dev/application.yml
       - classpath:beta/application-beta.yml
       - classpath:prod/application-prod.yml
+
+  jpa:
+    hibernate:
+      ddl-auto: update
