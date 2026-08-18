@@ -8,7 +8,7 @@ import com.theplay.business.services.project.domain.ProjectItemSettlementStatus;
 import com.theplay.business.services.project.domain.ProjectItemStatus;
 
 public record GetProjectItemResource(long id, Long projectId, Long providerJobId, String jobName,
-                                     String providerName, Long price, int headcount, ProjectItemStatus status,
+                                     String providerName, Long billingAmount, Long settlementAmount, int headcount, ProjectItemStatus status,
                                      ProjectItemExecutionStatus executionStatus,
                                      ProjectItemPaymentStatus paymentStatus,
                                      ProjectItemSettlementStatus settlementStatus,
@@ -21,7 +21,8 @@ public record GetProjectItemResource(long id, Long projectId, Long providerJobId
                 projectItem.getProviderJobId(),
                 projectItem.getJobName(),
                 projectItem.getProviderName(),
-                projectItem.getPrice(),
+                projectItem.getBillingAmount(),
+                projectItem.getSettlementAmount(),
                 projectItem.getHeadcount(),
                 projectItem.getStatus(),
                 projectItem.getExecutionStatus(),

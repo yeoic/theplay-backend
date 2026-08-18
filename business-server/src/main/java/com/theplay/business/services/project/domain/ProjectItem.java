@@ -36,8 +36,11 @@ public class ProjectItem extends AggregateRoot<Long> {
     @Column(name = "provider_name", nullable = false, length = 50)
     private String providerName;
 
-    @Column(name = "price")
-    private Long price;
+    @Column(name = "billing_amount", nullable = false)
+    private Long billingAmount;
+
+    @Column(name = "settlement_amount")
+    private Long settlementAmount;
 
     @Column(name = "headcount", nullable = false)
     private int headcount;
@@ -58,15 +61,16 @@ public class ProjectItem extends AggregateRoot<Long> {
     @Column(name = "settlement_status", nullable = false, length = 20)
     private ProjectItemSettlementStatus settlementStatus;
 
-    public ProjectItem(Long projectId, Long providerJobId, String jobName, String providerName, Long price,
-                       int headcount, ProjectItemStatus status, ProjectItemExecutionStatus executionStatus,
+    public ProjectItem(Long projectId, Long providerJobId, String jobName, String providerName,
+                       Long billingAmount, Long settlementAmount, int headcount, ProjectItemStatus status, ProjectItemExecutionStatus executionStatus,
                        ProjectItemPaymentStatus paymentStatus,
                        ProjectItemSettlementStatus settlementStatus) {
         this.projectId = projectId;
         this.providerJobId = providerJobId;
         this.jobName = jobName;
         this.providerName = providerName;
-        this.price = price;
+        this.billingAmount = billingAmount;
+        this.settlementAmount = settlementAmount;
         this.headcount = headcount;
         this.status = status;
         this.executionStatus = executionStatus;
@@ -76,7 +80,7 @@ public class ProjectItem extends AggregateRoot<Long> {
 
     @Builder
     private ProjectItem(Long id, Long projectId, Long providerJobId, String jobName, String providerName,
-                        Long price, int headcount, ProjectItemStatus status,
+                        Long billingAmount, Long settlementAmount, int headcount, ProjectItemStatus status,
                         ProjectItemExecutionStatus executionStatus, ProjectItemPaymentStatus paymentStatus,
                         ProjectItemSettlementStatus settlementStatus) {
         this.id = id;
@@ -84,7 +88,8 @@ public class ProjectItem extends AggregateRoot<Long> {
         this.providerJobId = providerJobId;
         this.jobName = jobName;
         this.providerName = providerName;
-        this.price = price;
+        this.billingAmount = billingAmount;
+        this.settlementAmount = settlementAmount;
         this.headcount = headcount;
         this.status = status;
         this.executionStatus = executionStatus;
