@@ -1,1 +1,9 @@
 # 인프라 분리시 내용 추가 예정
+spring:
+  config:
+    activate:
+      on-profile: beta
+
+  jpa:
+    hibernate:
+      ddl-auto: none

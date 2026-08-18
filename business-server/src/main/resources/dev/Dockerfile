@@ -4,6 +4,8 @@ ARG JAR_FILE=business-server/build/libs/business-server-0.0.1-SNAPSHOT.jar
 
 COPY ${JAR_FILE} /app.jar
 
+ENV SPRING_PROFILES_ACTIVE=dev
+
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]

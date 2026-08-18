@@ -1,6 +1,7 @@
 spring:
-  application:
-    name: business-server
+  config:
+    activate:
+      on-profile: dev
 
   datasource:
     url: jdbc:h2:mem:theplay;MODE=MySQL;DB_CLOSE_DELAY=-1
@@ -8,8 +9,6 @@ spring:
     driver-class-name: org.h2.Driver
 
   jpa:
-    hibernate:
-      ddl-auto: create-drop
     properties:
       hibernate:
         format_sql: true
