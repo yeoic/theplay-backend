@@ -11,6 +11,7 @@ public class RegisterProjectItemDtoMapper {
         return new RegisterProjectItemDto(
                 request.projectId(),
                 request.providerJobId(),
+                request.billingAmount(),
                 request.status(),
                 request.executionStatus(),
                 request.paymentStatus(),

@@ -5,6 +5,7 @@ import com.theplay.business.services.project.domain.ProjectItemPaymentStatus;
 import com.theplay.business.services.project.domain.ProjectItemSettlementStatus;
 import com.theplay.business.services.project.domain.ProjectItemStatus;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 public record RegisterProjectItemRequest(
         @NotNull(message = "프로젝트을(를) 입력해주세요.")
@@ -12,6 +13,10 @@ public record RegisterProjectItemRequest(
 
         @NotNull(message = "제공 서비스을(를) 입력해주세요.")
         Long providerJobId,
+
+        @NotNull(message = "청구 비용을(를) 입력해주세요.")
+        @Positive(message = "청구 비용은(는) 0보다 커야 합니다.")
+        Long billingAmount,
 
         @NotNull(message = "종합 상태을(를) 입력해주세요.")
         ProjectItemStatus status,
