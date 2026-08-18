@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: theplay-postgres
+    environment:
+      POSTGRES_DB: theplay
+      POSTGRES_USER: theplay
+      POSTGRES_PASSWORD: theplay
+      TZ: Asia/Seoul
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
