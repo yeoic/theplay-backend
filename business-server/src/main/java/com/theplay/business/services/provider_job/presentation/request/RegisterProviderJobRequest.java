@@ -14,6 +14,7 @@ public record RegisterProviderJobRequest(
         @NotNull(message = "공급사을(를) 입력해주세요.")
         Long providerId,
 
+        @PositiveOrZero(message = "단가은(는) 0 이상이어야 합니다.")
         Long price,
 
         @PositiveOrZero(message = "소요 시간(분)은(는) 0 이상이어야 합니다.")

@@ -5,7 +5,7 @@ import com.theplay.business.services.project.domain.ProjectItemPaymentStatus;
 import com.theplay.business.services.project.domain.ProjectItemSettlementStatus;
 import com.theplay.business.services.project.domain.ProjectItemStatus;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 public record RegisterProjectItemRequest(
         @NotNull(message = "프로젝트을(를) 입력해주세요.")
@@ -15,7 +15,7 @@ public record RegisterProjectItemRequest(
         Long providerJobId,
 
         @NotNull(message = "청구 비용을(를) 입력해주세요.")
-        @Positive(message = "청구 비용은(는) 0보다 커야 합니다.")
+        @PositiveOrZero(message = "청구 비용은(는) 0 이상이어야 합니다.")
         Long billingAmount,
 
         @NotNull(message = "종합 상태을(를) 입력해주세요.")
