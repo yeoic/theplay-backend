@@ -16,7 +16,6 @@ public class ProjectItemMapper {
                 providerJob.getId(),
                 providerJob.getName(),
                 provider.getName(),
-                dto.billingAmount(),
                 providerJob.getPrice(),
                 providerJob.getHeadcount(),
                 dto.status(),

@@ -39,8 +39,6 @@ class GetProjectItemControllerTest {
                 .andExpect(jsonPath("$.data.providerJobId").value(1))
                 .andExpect(jsonPath("$.data.jobName").value("넌버벌 퍼포먼스 '비트'"))
                 .andExpect(jsonPath("$.data.providerName").value("청춘마이크 밴드"))
-                .andExpect(jsonPath("$.data.billingAmount").value(4000000))
-                .andExpect(jsonPath("$.data.settlementAmount").value(3000000))
                 .andExpect(jsonPath("$.data.headcount").value(4))
                 .andExpect(jsonPath("$.data.status").value("WAITING"))
                 .andExpect(jsonPath("$.data.executionStatus").value("PROPOSED"))

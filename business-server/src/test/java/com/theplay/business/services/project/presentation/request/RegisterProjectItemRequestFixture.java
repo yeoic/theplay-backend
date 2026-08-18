@@ -9,7 +9,7 @@ public class RegisterProjectItemRequestFixture {
 
     public static RegisterProjectItemRequest aRegisterProjectItemRequest() {
         return new RegisterProjectItemRequest(
-                1L, 1L, 4_000_000L, ProjectItemStatus.WAITING, ProjectItemExecutionStatus.PROPOSED,
+                1L, 1L, ProjectItemStatus.WAITING, ProjectItemExecutionStatus.PROPOSED,
                 ProjectItemPaymentStatus.PAYMENT_PENDING,
                 ProjectItemSettlementStatus.SETTLEMENT_PENDING);
     }
