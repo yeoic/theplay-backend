@@ -1,0 +1,88 @@
+<svg width="900" height="660" viewBox="0 0 900 660" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#6e7781" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="ar3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#bc4c00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="900" height="660" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+
+  <rect x="40" y="60" width="170" height="28" rx="6" fill="#ddf4ff" stroke="#54aeff"/>
+  <rect x="40" y="88" width="170" height="56" fill="#ffffff" stroke="#54aeff"/>
+  <text x="125" y="79" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">customer</text>
+  <text x="52" y="108" font-size="12" fill="#57606a">name</text>
+  <text x="52" y="128" font-size="12" fill="#57606a">phone_number</text>
+
+  <rect x="290" y="40" width="190" height="28" rx="6" fill="#ede9fe" stroke="#a475f9"/>
+  <rect x="290" y="68" width="190" height="98" fill="#ffffff" stroke="#a475f9"/>
+  <text x="385" y="59" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">project</text>
+  <text x="302" y="88" font-size="12" fill="#57606a">→ customer_id</text>
+  <text x="302" y="108" font-size="12" fill="#57606a">→ venue_id</text>
+  <text x="302" y="128" font-size="12" fill="#57606a">status</text>
+  <text x="302" y="148" font-size="12" fill="#57606a">performance_date</text>
+
+  <rect x="640" y="60" width="180" height="28" rx="6" fill="#ccfbf1" stroke="#2dd4bf"/>
+  <rect x="640" y="88" width="180" height="56" fill="#ffffff" stroke="#2dd4bf"/>
+  <text x="730" y="79" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f5d56">provider</text>
+  <text x="652" y="108" font-size="12" fill="#57606a">name</text>
+  <text x="652" y="128" font-size="12" fill="#57606a">category (공연·청소…)</text>
+
+  <rect x="40" y="220" width="170" height="28" rx="6" fill="#ddf4ff" stroke="#54aeff"/>
+  <rect x="40" y="248" width="170" height="56" fill="#ffffff" stroke="#54aeff"/>
+  <text x="125" y="239" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">venue</text>
+  <text x="52" y="268" font-size="12" fill="#57606a">name · seat_count</text>
+  <text x="52" y="288" font-size="12" fill="#57606a">address (카카오 주소)</text>
+
+  <rect x="290" y="230" width="210" height="28" rx="6" fill="#ede9fe" stroke="#a475f9"/>
+  <rect x="290" y="258" width="210" height="212" fill="#ffffff" stroke="#a475f9"/>
+  <text x="395" y="249" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">project_item (견적 항목)</text>
+  <text x="302" y="278" font-size="12" fill="#57606a">→ project_id</text>
+  <text x="302" y="298" font-size="12" fill="#57606a">→ provider_job_id (추적용)</text>
+  <rect x="300" y="308" width="190" height="102" rx="6" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="310" y="326" font-size="12" font-weight="bold" fill="#7d4e00">스냅샷 — 등록 시 복사</text>
+  <text x="310" y="346" font-size="12" fill="#7d4e00">job_name</text>
+  <text x="310" y="366" font-size="12" fill="#7d4e00">provider_name</text>
+  <text x="310" y="386" font-size="12" fill="#7d4e00">settlement_amount · headcount</text>
+  <text x="302" y="430" font-size="12" fill="#57606a">billing_amount (견적 시 책정)</text>
+  <text x="302" y="450" font-size="12" fill="#57606a">상태 4종: 종합·실행·결제·정산</text>
+
+  <rect x="640" y="230" width="180" height="28" rx="6" fill="#ccfbf1" stroke="#2dd4bf"/>
+  <rect x="640" y="258" width="180" height="98" fill="#ffffff" stroke="#2dd4bf"/>
+  <text x="730" y="249" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f5d56">provider_job (카탈로그)</text>
+  <text x="652" y="278" font-size="12" fill="#57606a">→ provider_id</text>
+  <text x="652" y="298" font-size="12" fill="#57606a">name · price</text>
+  <text x="652" y="318" font-size="12" fill="#57606a">headcount</text>
+  <text x="652" y="338" font-size="12" fill="#57606a">duration_minutes</text>
+
+  <rect x="40" y="400" width="170" height="28" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+  <rect x="40" y="428" width="170" height="76" fill="#ffffff" stroke="#8c959f"/>
+  <text x="125" y="419" text-anchor="middle" font-size="14" font-weight="bold" fill="#424a53">asset</text>
+  <text x="52" y="448" font-size="12" fill="#57606a">→ workspace_id</text>
+  <text x="52" y="468" font-size="12" fill="#57606a">category · status</text>
+  <text x="52" y="488" font-size="12" fill="#57606a">serial_number</text>
+
+  <rect x="640" y="420" width="180" height="28" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+  <rect x="640" y="448" width="180" height="76" fill="#ffffff" stroke="#8c959f"/>
+  <text x="730" y="439" text-anchor="middle" font-size="14" font-weight="bold" fill="#424a53">workspace</text>
+  <text x="652" y="468" font-size="12" fill="#57606a">name</text>
+  <text x="652" y="488" font-size="12" fill="#57606a">type (사무실 / 창고)</text>
+  <text x="652" y="508" font-size="12" fill="#57606a">address (카카오 주소)</text>
+
+  <line x1="286" y1="100" x2="216" y2="100" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <path d="M320 170 L320 262 L216 262" fill="none" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <line x1="395" y1="226" x2="395" y2="172" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <line x1="504" y1="290" x2="634" y2="290" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <line x1="730" y1="226" x2="730" y2="150" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <path d="M214 460 L420 460 L420 486 L634 486" fill="none" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar3)"/>
+  <path d="M636 340 L560 340 L560 360 L496 360" fill="none" stroke="#bc4c00" stroke-width="1.8" marker-end="url(#ar3a)"/>
+  <text x="518" y="330" font-size="11" font-weight="bold" fill="#bc4c00">등록 시 값 복사</text>
+
+  <line x1="40" y1="560" x2="90" y2="560" stroke="#6e7781" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="100" y="564" font-size="12" fill="#57606a">ID 참조 — JPA 연관관계 없음, 존재 검증만</text>
+  <line x1="400" y1="560" x2="450" y2="560" stroke="#bc4c00" stroke-width="1.8"/>
+  <text x="460" y="564" font-size="12" fill="#57606a">스냅샷 복사 — 이후 카탈로그가 바뀌어도 불변</text>
+  <text x="40" y="596" font-size="12" fill="#57606a">모든 엔티티 공통: created_at · updated_at · deleted_at — 삭제는 soft delete, 조회는 삭제 행 제외</text>
+  <text x="40" y="618" font-size="12" fill="#57606a">주소는 카카오 지도 API 형태의 Address 값 객체(@Embedded)로 공통화</text>
+</svg>

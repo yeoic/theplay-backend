@@ -1,0 +1,69 @@
+<svg width="860" height="560" viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#6e7781" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="560" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+
+  <text x="40" y="66" font-size="14" font-weight="bold" fill="#1f2328">현실의 업무</text>
+
+  <rect x="40" y="84" width="180" height="88" rx="8" fill="#ddf4ff" stroke="#54aeff"/>
+  <text x="130" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">① 문의 · 견적 요청</text>
+  <text x="130" y="130" text-anchor="middle" font-size="12" fill="#0969da">지자체 · 기관 고객이</text>
+  <text x="130" y="148" text-anchor="middle" font-size="12" fill="#0969da">공연 한 건을 의뢰</text>
+  <line x1="222" y1="128" x2="238" y2="128" stroke="#6e7781" stroke-width="1.2" marker-end="url(#ar2)"/>
+
+  <rect x="245" y="84" width="180" height="88" rx="8" fill="#ddf4ff" stroke="#54aeff"/>
+  <text x="335" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">② 견적 구성</text>
+  <text x="335" y="130" text-anchor="middle" font-size="12" fill="#0969da">공연 · 무대 · 청소 등</text>
+  <text x="335" y="148" text-anchor="middle" font-size="12" fill="#0969da">공급사의 일을 조합</text>
+  <line x1="427" y1="128" x2="443" y2="128" stroke="#6e7781" stroke-width="1.2" marker-end="url(#ar2)"/>
+
+  <rect x="450" y="84" width="180" height="88" rx="8" fill="#ddf4ff" stroke="#54aeff"/>
+  <text x="540" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">③ 실행</text>
+  <text x="540" y="130" text-anchor="middle" font-size="12" fill="#0969da">항목별로 준비 · 진행</text>
+  <text x="540" y="148" text-anchor="middle" font-size="12" fill="#0969da">보류 · 취소도 생김</text>
+  <line x1="632" y1="128" x2="648" y2="128" stroke="#6e7781" stroke-width="1.2" marker-end="url(#ar2)"/>
+
+  <rect x="655" y="84" width="180" height="88" rx="8" fill="#ddf4ff" stroke="#54aeff"/>
+  <text x="745" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#0550ae">④ 청구와 정산</text>
+  <text x="745" y="130" text-anchor="middle" font-size="12" fill="#0969da">고객에게 청구하고</text>
+  <text x="745" y="148" text-anchor="middle" font-size="12" fill="#0969da">공급사에 정산</text>
+
+  <line x1="130" y1="176" x2="130" y2="282" stroke="#8250df" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+  <line x1="335" y1="176" x2="335" y2="282" stroke="#8250df" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+  <line x1="540" y1="176" x2="540" y2="282" stroke="#8250df" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+  <line x1="745" y1="176" x2="745" y2="282" stroke="#8250df" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+
+  <text x="40" y="270" font-size="14" font-weight="bold" fill="#1f2328">데이터 모델</text>
+
+  <rect x="40" y="288" width="180" height="106" rx="8" fill="#ede9fe" stroke="#a475f9"/>
+  <text x="130" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">customer · project</text>
+  <text x="130" y="334" text-anchor="middle" font-size="12" fill="#8250df">고객은 마스터로 등록</text>
+  <text x="130" y="352" text-anchor="middle" font-size="12" fill="#8250df">프로젝트가 공연 한 건을</text>
+  <text x="130" y="370" text-anchor="middle" font-size="12" fill="#8250df">대표 (공연일 · 공연장)</text>
+
+  <rect x="245" y="288" width="180" height="106" rx="8" fill="#ede9fe" stroke="#a475f9"/>
+  <text x="335" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">project_item N개</text>
+  <text x="335" y="334" text-anchor="middle" font-size="12" fill="#8250df">provider_job 카탈로그에서</text>
+  <text x="335" y="352" text-anchor="middle" font-size="12" fill="#8250df">이름 · 정산가 · 인원을</text>
+  <text x="335" y="370" text-anchor="middle" font-size="12" fill="#8250df">복사해 견적에 담음</text>
+
+  <rect x="450" y="288" width="180" height="106" rx="8" fill="#ede9fe" stroke="#a475f9"/>
+  <text x="540" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">항목별 상태</text>
+  <text x="540" y="334" text-anchor="middle" font-size="12" fill="#8250df">종합 · 실행 상태 분리</text>
+  <text x="540" y="352" text-anchor="middle" font-size="12" fill="#8250df">제안중 → 준비중 → 완료</text>
+  <text x="540" y="370" text-anchor="middle" font-size="12" fill="#8250df">취소 · 보류는 별도 값</text>
+
+  <rect x="655" y="288" width="180" height="106" rx="8" fill="#ede9fe" stroke="#a475f9"/>
+  <text x="745" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#6639ba">금액 · 상태 2쌍</text>
+  <text x="745" y="334" text-anchor="middle" font-size="12" fill="#8250df">청구: billingAmount</text>
+  <text x="745" y="352" text-anchor="middle" font-size="12" fill="#8250df">정산: settlementAmount</text>
+  <text x="745" y="370" text-anchor="middle" font-size="12" fill="#8250df">결제 · 정산 상태 각각</text>
+
+  <rect x="40" y="430" width="795" height="90" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="60" y="458" font-size="13" font-weight="bold" fill="#7d4e00">핵심 결정 — 현실에서 "견적서에 적힌 항목"은 시간이 지나도 변하지 않는다</text>
+  <text x="60" y="480" font-size="12" fill="#7d4e00">공급사가 단가를 올리거나 서비스를 없애도 3년 전 견적서는 그대로여야 한다.</text>
+  <text x="60" y="500" font-size="12" fill="#7d4e00">그래서 project_item은 카탈로그를 참조하지 않고, 담는 순간의 값을 복사해 보관한다.</text>
+</svg>
