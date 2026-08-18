@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: business-server
+
+  datasource:
+    url: jdbc:h2:mem:theplay;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    com.theplay: INFO
+
+server:
+  port: 8080
