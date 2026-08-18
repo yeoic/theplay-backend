@@ -5,6 +5,7 @@ ARG JAR_FILE=business-server/build/libs/business-server-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} /app.jar
 
 ENV SPRING_PROFILES_ACTIVE=dev
+ENV TZ=Asia/Seoul
 
 EXPOSE 8080
 
