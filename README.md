@@ -13,6 +13,43 @@
 - **애그리거트 중심 도메인 모델** — 모든 엔티티는 `AggregateRoot`를 상속하며, 도메인 이벤트 등록·발행(`popAllEvents`), 감사 필드(생성/수정/삭제 시각), Soft Delete 를 공통으로 책임집니다.
 - **역할 분리된 공용 추상화** — `Specification`(검증 규칙), `DomainEventPublishRepositorySupport`(저장 시 이벤트 발행), 공통 응답/예외 처리를 `core-lib`로 분리해 서버 코드가 비즈니스에만 집중하도록 했습니다.
 
+#### 요청 처리 컨벤션
+
+모든 API는 같은 흐름을 따릅니다. 유스케이스 하나에 Controller·DtoMapper·Service가 한 세트로 대응합니다(예: `RegisterProjectItemController` → `RegisterProjectItemDtoMapper` → `RegisterProjectItemService`).
+
+```mermaid
+sequenceDiagram
+    participant C as Controller<br/>(presentation)
+    participant M as DtoMapper<br/>(presentation)
+    participant S as Service<br/>(application)
+    participant R as Repository<br/>(infrastructure)
+
+    Note over C: ① Request를 @Valid로 1차 형식 검증
+    C->>M: Request
+    M-->>C: Dto
+    C->>S: Dto
+    Note over S: ② 동작별 검증 (참조 무결성, Specification)
+    Note over S: ③ 비즈니스 로직 수행
+    S->>R: 애그리거트 저장 / 조회 (QueryDSL)
+    Note over R: ④ 저장 시 도메인 이벤트 발행
+    R-->>S: 애그리거트
+    S-->>C: Resource
+    Note over C: ⑤ 공통 Response 포맷으로 응답
+```
+
+1. **1차 검증 (형식)** — presentation의 `Request`가 Bean Validation(`@Valid`)으로 형식 수준의 검증을 담당합니다. 형식이 틀린 요청은 서비스까지 내려가지 않습니다.
+2. **계층 간 모델 격리** — `DtoMapper`가 `Request`를 application 계층의 `Dto`로 변환합니다. presentation의 모델이 application 아래로 새어 들어가지 않아, API 스펙 변경이 비즈니스 로직에 전파되지 않습니다.
+3. **2차 검증 (의미)** — Service가 동작에 맞는 검증을 수행합니다. 참조하는 애그리거트의 존재 확인 같은 규칙을 검증하고, 실패는 `ProjectNotFoundException` 같은 명시적 도메인 예외로 표현합니다. 여러 곳에서 재사용되는 규칙은 `Specification`으로 분리합니다.
+4. **비즈니스 로직 수행 후 영속화** — 검증을 통과하면 비즈니스 로직을 수행하고, QueryDSL 기반 Repository 구현체(infrastructure)를 통해 저장·조회합니다.
+
+#### 도메인 이벤트 발행
+
+부가 동작(알림, 후속 처리 등)을 비즈니스 로직에 섞지 않기 위해 도메인 이벤트를 사용하며, 발행 시점을 저장 시점에 묶어 처리합니다.
+
+- 애그리거트는 상태가 변할 때 `register()`로 이벤트를 자기 안에 쌓아둘 뿐, 발행 수단(Spring 등)을 알지 못합니다.
+- 저장 시점에 `DomainEventPublishRepositorySupport.save()`가 `popAllEvents()`로 쌓인 이벤트를 꺼내 `ApplicationEventPublisher`로 발행합니다. 저장과 발행이 같은 트랜잭션에 묶이므로, 저장되지 않은 변경의 이벤트가 밖으로 나가는 일이 없습니다.
+- 신규 애그리거트는 저장 전에는 ID가 없으므로, 발행 직전 `assignDomainIdIfAbsent()`로 채번된 ID를 이벤트에 주입합니다. 이벤트를 만드는 쪽은 ID 채번 시점을 신경 쓸 필요가 없습니다.
+
 ### 2. 현실 비즈니스를 데이터 모델링할 수 있습니다
 
 - **청구와 정산의 분리** — 고객에게 청구하는 금액(`billingAmount`)과 외주 업체에 정산하는 금액(`settlementAmount`)은 현실에서 서로 다른 돈의 흐름이므로 분리해 모델링했습니다. 재능기부·무상 제공처럼 0원인 케이스도 허용하되 음수만 거절합니다.
